@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-
-const SongList = ({songs}) => {
+const SongList = ({ songs }) => {
   console.log(`Received Data from Props \n${JSON.stringify(songs)}`);
   return (
     <React.Fragment>
@@ -11,8 +10,8 @@ const SongList = ({songs}) => {
   );
 };
 
-const mapToProps = state =>{
-  
-  return {songs:state.songs};
-}
+const mapToProps = (state) => {
+  return { songs: state.songs };
+};
+
 export default connect(mapToProps)(SongList);
