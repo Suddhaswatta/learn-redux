@@ -1,17 +1,33 @@
 import React from "react";
 import { connect } from "react-redux";
-
-const SongList = ({ songs }) => {
-  console.log(`Received Data from Props \n${JSON.stringify(songs)}`);
+import { selectSong } from "../actions";
+const SongList = ({ songs, selectSong }) => {
+  const songItems = songs.map((song) => (
+    <li className="list-group-item" key={song.id}>
+      <div className="row">
+        <div className="col-md-10">{song.name}</div>
+        <div className="col-md-2">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => selectSong(song)}
+          >
+            Select
+          </button>
+        </div>
+      </div>
+    </li>
+  ));
   return (
     <React.Fragment>
-      <div>Song Works</div>
+      <ul className="list-group">{songItems} </ul>
     </React.Fragment>
   );
 };
 
 const mapToProps = (state) => {
+  console.log(state);
   return { songs: state.songs };
 };
 
-export default connect(mapToProps)(SongList);
+export default connect(mapToProps, { selectSong })(SongList);
