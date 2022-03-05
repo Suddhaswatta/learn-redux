@@ -5,14 +5,14 @@ import SongList from "./SongList";
 const App = () => {
   return (
     <React.Fragment>
-      <div className="row">
-        <div className="col-lg-6 col-md-6">
-          <SongList />
+        <div className="row">
+          <div className="col-md-6">
+            <SongList />
+          </div>
+          <div className="col-md-6">
+            <SongDetails />
+          </div>
         </div>
-        <div className="col-md-6 col-lg-6">
-          <SongDetails />
-        </div>
-      </div>
     </React.Fragment>
   );
 };

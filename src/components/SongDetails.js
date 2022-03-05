@@ -7,11 +7,13 @@ const SongDetails = ({ song }) => {
   return (
     <React.Fragment>
       <div className="card">
+          <div className="card-header">{song.artist}</div>
         <div className="card-body">
           <h5 className="card-title">{song.name}</h5>
-          <p className="card-text">
-            Artist : {song.artist} Duration :{song.duration}
-          </p>
+          <h6 className="card-subtitle mb-2 text-muted">Lyrics</h6>
+          <div className="card-text">
+            <pre>{song.lyrics}</pre>
+          </div>
         </div>
       </div>
     </React.Fragment>

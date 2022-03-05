@@ -5,8 +5,8 @@ const SongList = ({ songs, selectSong }) => {
   const songItems = songs.map((song) => (
     <li className="list-group-item" key={song.id}>
       <div className="row">
-        <div className="col-md-10">{song.name}</div>
-        <div className="col-md-2">
+        <div className="col-md-9">{song.name}</div>
+        <div className="col-md-3">
           <button
             type="button"
             className="btn btn-primary"
